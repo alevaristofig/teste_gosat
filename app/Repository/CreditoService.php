@@ -3,9 +3,10 @@
     namespace App\Repository;
 
     use Illuminate\Support\Facades\Http;
+    use Illuminate\Http\JsonResponse;
 
     class CreditoService {
-        public function ofertarCredito(string $cpf) {
+        public function ofertarCredito(string $cpf): string {
 
             $response = Http::withOptions([
                 'verify' => false,
