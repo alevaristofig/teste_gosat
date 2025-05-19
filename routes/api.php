@@ -10,6 +10,7 @@ Route::get('/user', function (Request $request) {
 
 Route::prefix('v1/simulacao')->group(function() {
 
-    Route::post('ofertaCredito',[CreditoController::class,'ofertarCredito']);    
+    Route::post('consultacredito',[CreditoController::class,'consultacredito']);  
+    Route::post('simulacredito',[CreditoController::class,'simularCredito']);    
 
 });
