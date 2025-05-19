@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Repository\CreditoService;
+use App\Service\CreditoService;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 
