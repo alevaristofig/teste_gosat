@@ -13,7 +13,7 @@ Route::prefix('v1/simulacao')->group(function() {
 
     Route::post('/login',[UserController::class,'login']);
 
-    Route::post('consultacredito',[CreditoController::class,'consultacredito']);  
-    Route::post('simulacredito',[CreditoController::class,'simularCredito']);    
+    Route::post('consultacredito',[CreditoController::class,'consultacredito'])->middleware('auth:sanctum');  
+    Route::post('simulacredito',[CreditoController::class,'simularCredito'])->middleware('auth:sanctum');    
 
 });
