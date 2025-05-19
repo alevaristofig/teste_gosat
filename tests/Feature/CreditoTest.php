@@ -10,8 +10,8 @@ class CreditoTest extends TestCase
 {
     public function test_BuscarOfertaCredidoSucesso(): void
     {
-        $response = $this->post('/v1/simulacao/credito',['cpf' => '11111111111']);
+        $response = $this->post('api/v1/simulacao/ofertaCredito',['cpf' => '11111111111']);
 
-        $response->assertStatus(200);
+        $this->assertEquals('Banco PingApp',$response['instituicoes'][0]['nome']);
     }
 }
