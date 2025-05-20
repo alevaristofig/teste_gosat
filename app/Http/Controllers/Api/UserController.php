@@ -20,4 +20,10 @@ class UserController extends Controller
 
         return response()->json($result,200);
     }
+
+    public function logout() {
+        $result = $this->service->logout();
+
+        return response()->json($result,200);
+    }
 }

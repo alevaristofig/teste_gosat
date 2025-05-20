@@ -37,7 +37,15 @@
 
             return response()->json([
                 'token' => $token,
+                'cpf' => auth()->user()->cpf
             ]);
+        }
 
+        public function logout() {
+            $this->model->tokens()->delete();
+
+            return response()->json([
+                "message"=>"logged out"
+            ]);
         }
     }
