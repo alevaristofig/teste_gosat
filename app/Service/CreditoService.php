@@ -16,7 +16,7 @@
             $this->model = $model;
         }
 
-        public function ofertarCredito(string $cpf): JsonResponse {
+        public function ofertarCredito(string $cpf, string $tipo): JsonResponse | string {
 
             try {
                 $response = Http::withOptions([
@@ -26,14 +26,14 @@
                     ]
                 );
 
-                return response()->json(json_decode($response->body()),200);
+                return $tipo === 'I' ? $response->body() : response()->json(json_decode($response->body()),200);
             } catch(\Exception $e) {
                 $message = new ApiMessages($e->getMessage());
                 return response()->json(['error' => $message->getMessage()], 401);
             }           
         }
 
-        public function consultarCredito(array $dados): JsonResponse {
+        public function consultarCredito(array $dados, string $tipo): JsonResponse | string {
 
             try {               
                 $response = Http::withOptions([
@@ -45,7 +45,7 @@
                     ]
                 );
 
-                return response()->json(json_decode($response->body()),200);
+                return $tipo === 'I' ? $response->body() : response()->json(json_decode($response->body()),200);
             } catch(\Exception $e) {
                 $message = new ApiMessages($e->getMessage());
                 return response()->json(['error' => $message->getMessage()], 401);
@@ -53,7 +53,7 @@
         }
 
         public function consultarMelhoresOfertas(string $cpf) {            
-            $ofertas = $this->ofertarCredito($cpf);
+            $ofertas = $this->ofertarCredito($cpf,"I");
             $ofertas = json_decode($ofertas);
 
             $aux_ofertas = [];
@@ -70,7 +70,7 @@
                             'codModalidade' => $modalidade->cod
                         ];
 
-                        $resultAux = $this->consultarCredito($dados);
+                        $resultAux = $this->consultarCredito($dados,'I');
                       
                         $resultOfertas[] = [
                             'id' => $valueDados->id,
