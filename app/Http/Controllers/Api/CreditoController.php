@@ -22,9 +22,13 @@ class CreditoController extends Controller
         return response()->json(json_decode($result),200);
     }
 
-    public function simularCredito(Request $request): JsonResponse {
-         $result = $this->service->consultarCredito($request->all());
+    public function simularCredito(Request $request): JsonResponse {        
+        $result = $this->service->consultarCredito($request->all());
 
         return response()->json(json_decode($result),200);
+    }
+
+    public function consultarMelhoresOfertas(Request $request) {
+        $this->service->consultarMelhoresOfertas($request->all()['cpf']);
     }
 }

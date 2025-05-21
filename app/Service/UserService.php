@@ -17,7 +17,6 @@
             $this->model = $model;
         }
 
-
         public function Login(Request $request): JsonResponse {
             $data = $request->validate([
                 'email' => 'required | string | email',
@@ -37,7 +36,7 @@
 
             return response()->json([
                 'token' => $token,
-                'cpf' => auth()->user()->cpf
+                'cpf' => $usuario->cpf
             ]);
         }
 
