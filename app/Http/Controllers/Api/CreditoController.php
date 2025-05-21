@@ -20,7 +20,7 @@ class CreditoController extends Controller
     }
 
     public function simularCredito(Request $request): JsonResponse {        
-        return $this->service->consultarCredito($request->all());        
+        return $this->service->consultarCredito($request->all(),'C');        
     }
 
     public function consultarMelhoresOfertas(Request $request) {

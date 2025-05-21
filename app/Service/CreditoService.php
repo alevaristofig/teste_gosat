@@ -99,6 +99,7 @@
 
                 $melhoresOfertas[$key] = [
                     'id' => $value['id'],
+                    'cpf' => $cpf,
                     'instituicaoFinanceira' => $value['nome'],
                     'modalidadeCredito' => $value['modalidadeCredito'],
                     'oferta' => [
