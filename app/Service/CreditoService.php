@@ -16,30 +16,40 @@
             $this->model = $model;
         }
 
-        public function ofertarCredito(string $cpf): string {
+        public function ofertarCredito(string $cpf): JsonResponse {
 
-            $response = Http::withOptions([
-                'verify' => false,
-            ])->post('https://dev.gosat.org/api/v1/simulacao/credito',[
-                    'cpf' => $cpf,
-                ]
-            );
+            try {
+                $response = Http::withOptions([
+                    'verify' => false,
+                ])->post('https://dev.gosat.org/api/v1/simulacao/credito',[
+                        'cpf' => $cpf,
+                    ]
+                );
 
-            return $response->body();
+                return response()->json(json_decode($response->body()),200);
+            } catch(\Exception $e) {
+                $message = new ApiMessages($e->getMessage());
+                return response()->json(['error' => $message->getMessage()], 401);
+            }           
         }
 
-        public function consultarCredito(array $dados): string {
+        public function consultarCredito(array $dados): JsonResponse {
 
-            $response = Http::withOptions([
-                'verify' => false,
-            ])->post('https://dev.gosat.org/api/v1/simulacao/oferta',[
-                    'cpf' => $dados['cpf'],
-                    'instituicao_id' => $dados['instituicao_id'],
-                    'codModalidade' => $dados['codModalidade']
-                ]
-            );
+            try {               
+                $response = Http::withOptions([
+                    'verify' => false,
+                ])->post('https://dev.gosat.org/api/v1/simulacao/oferta',[
+                        'cpf' => $dados['cpf'],
+                        'instituicao_id' => $dados['instituicao_id'],
+                        'codModalidade' => $dados['codModalidade']
+                    ]
+                );
 
-            return $response->body();
+                return response()->json(json_decode($response->body()),200);
+            } catch(\Exception $e) {
+                $message = new ApiMessages($e->getMessage());
+                return response()->json(['error' => $message->getMessage()], 401);
+            }              
         }
 
         public function consultarMelhoresOfertas(string $cpf) {            

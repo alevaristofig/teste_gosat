@@ -15,17 +15,12 @@ class CreditoController extends Controller
         $this->service = $service;
     }
 
-    public function consultacredito(Request $request): JsonResponse {
-        
-        $result = $this->service->ofertarCredito($request->all()['cpf']);
-
-        return response()->json(json_decode($result),200);
+    public function consultacredito(Request $request): JsonResponse {        
+        return $this->service->ofertarCredito($request->all()['cpf']);       
     }
 
     public function simularCredito(Request $request): JsonResponse {        
-        $result = $this->service->consultarCredito($request->all());
-
-        return response()->json(json_decode($result),200);
+        return $this->service->consultarCredito($request->all());        
     }
 
     public function consultarMelhoresOfertas(Request $request) {
