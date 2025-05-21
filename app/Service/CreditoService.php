@@ -111,7 +111,11 @@
         }
 
         public function salvarOferta(Request $request) {
-
+            try {                                
+                return $this->model->create($request->all());             
+            } catch(\Exception $e) {
+               return false;
+            }
         }
 
         private function calcularOfertas(float $valor, float $juros, float $qntParcela): array {
