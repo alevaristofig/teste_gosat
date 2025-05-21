@@ -12,6 +12,7 @@ Route::prefix('v1/simulacao')->group(function() {
 
     Route::post('/consultacredito',[CreditoController::class,'consultacredito'])->middleware('auth:sanctum');  
     Route::post('/simulacredito',[CreditoController::class,'simularCredito'])->middleware('auth:sanctum');   
-    Route::post('/melhoresofertas',[CreditoController::class,'consultarMelhoresOfertas'])->middleware('auth:sanctum');    
+    Route::post('/melhoresofertas',[CreditoController::class,'consultarMelhoresOfertas'])->middleware('auth:sanctum'); 
+    Route::post('/salvaoferta',[CreditoController::class,'salvarOferta'])->middleware('auth:sanctum');    
 
 });

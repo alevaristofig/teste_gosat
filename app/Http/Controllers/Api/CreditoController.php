@@ -33,4 +33,8 @@ class CreditoController extends Controller
 
         return response()->json($result,200);
     }
+
+    public function salvarOferta(Request $request) {
+        dd($request->all());
+    }
 }

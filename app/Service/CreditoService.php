@@ -4,8 +4,16 @@
 
     use Illuminate\Support\Facades\Http;
     use Illuminate\Http\JsonResponse;
+    use Illuminate\Http\Request;
+    use App\Models\OfertaCredito;
 
     class CreditoService {
+
+        private $model;
+
+        public function __construct(OfertaCredito $model) {
+            $this->model = $model;
+        }
 
         public function ofertarCredito(string $cpf): string {
 
@@ -79,6 +87,7 @@
                         $auxOfertas2;
 
                 $melhoresOfertas[$key] = [
+                    'id' => $value['id'],
                     'instituicaoFinanceira' => $value['nome'],
                     'modalidadeCredito' => $value['modalidadeCredito'],
                     'oferta' => [
@@ -99,6 +108,10 @@
           });
 
           return $melhoresOfertas;
+        }
+
+        public function salvarOferta(Request $request) {
+
         }
 
         private function calcularOfertas(float $valor, float $juros, float $qntParcela): array {
