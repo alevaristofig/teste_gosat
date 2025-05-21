@@ -110,11 +110,14 @@
           return $melhoresOfertas;
         }
 
-        public function salvarOferta(Request $request) {
+        public function salvarOferta(Request $request): JsonResponse {
             try {                                
-                return $this->model->create($request->all());             
+                $result = $this->model->create($request->all());  
+                
+                return response()->json($result,200);
             } catch(\Exception $e) {
-               return false;
+                $message = new ApiMessages($e->getMessage());
+                return response()->json(['error' => $message->getMessage()], 401);
             }
         }
 
