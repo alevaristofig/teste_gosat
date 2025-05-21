@@ -29,6 +29,8 @@ class CreditoController extends Controller
     }
 
     public function consultarMelhoresOfertas(Request $request) {
-        $this->service->consultarMelhoresOfertas($request->all()['cpf']);
+        $result = $this->service->consultarMelhoresOfertas($request->all()['cpf']);
+
+        return response()->json($result,200);
     }
 }

@@ -81,7 +81,7 @@
                 $melhoresOfertas[$key] = [
                     'instituicaoFinanceira' => $value['nome'],
                     'modalidadeCredito' => $value['modalidadeCredito'],
-                    'oferta1' => [
+                    'oferta' => [
                         'valorAPagar' => $dadosOferta['totalComJuros'],
                         'valorSolicitado' => ($auxOfertas1['totalComJuros'] <  $auxOfertas2['totalComJuros']) 
                             ? 
@@ -94,10 +94,14 @@
                 ];
             }
 
-            dd($melhoresOfertas);
+          usort($melhoresOfertas, function ($v1, $v2) {
+            return $v1['oferta']['valorAPagar'] <=> $v2['oferta']['valorAPagar'];
+          });
+
+          return $melhoresOfertas;
         }
 
-        private function calcularOfertas(float $valor, float $juros, float $qntParcela) {
+        private function calcularOfertas(float $valor, float $juros, float $qntParcela): array {
              $juros = $valor * $juros * $qntParcela;
              $totalComJuros = ($valor * $qntParcela) + $juros;
 
