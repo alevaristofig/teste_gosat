@@ -32,4 +32,8 @@ class CreditoController extends Controller
     public function salvarOferta(Request $request) {
        return $this->service->salvarOferta($request);
     }
+
+    public function calcularOferta(Request $request) {
+       return $this->service->calcularOferta($request);
+    }
 }
