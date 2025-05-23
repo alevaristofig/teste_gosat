@@ -1,0 +1,858 @@
+{
+	"info": {
+		"_postman_id": "9847631b-6def-44c0-b626-c89330bc5ca2",
+		"name": "teste_gosat",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3795284"
+	},
+	"item": [
+		{
+			"name": "v1/simulacao/ofertaCredito",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|g6t6zIyBxv18O0mCHCXVJgdiu2QHA5qnNQxdUAMs2f313c82",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "xsrf-token",
+						"value": "4|gfyAYTwb4vLs06RxdHLUekfTYAHPWOGT4XQtgQt0319c6616",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:8000",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "cpf",
+							"value": "22222222222",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/simulacao/consultacredito",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"simulacao",
+						"consultacredito"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/v1/simulacao/simulacredito",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|g6t6zIyBxv18O0mCHCXVJgdiu2QHA5qnNQxdUAMs2f313c82",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "cpf",
+							"value": "22222222222",
+							"type": "text"
+						},
+						{
+							"key": "instituicao_id",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "codModalidade",
+							"value": "12",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/simulacao/simulacredito",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"simulacao",
+						"simulacredito"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/v1/simulacao/login",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "gnikolaus@example.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "usuario1@email.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/simulacao/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"simulacao",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/simulacao/logout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/simulacao/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"simulacao",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/v1/simulacao/melhoresofertas",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|g6t6zIyBxv18O0mCHCXVJgdiu2QHA5qnNQxdUAMs2f313c82",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "cpf",
+							"value": "11111111111",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/simulacao/melhoresofertas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"simulacao",
+						"melhoresofertas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/v1/simulacao/salvaoferta",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|g6t6zIyBxv18O0mCHCXVJgdiu2QHA5qnNQxdUAMs2f313c82",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "cpf",
+							"value": "11111111111",
+							"type": "text"
+						},
+						{
+							"key": "id_instiuicao",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "instituicao_financeira",
+							"value": "Financeira Assert",
+							"type": "text"
+						},
+						{
+							"key": "modalidade_credito",
+							"value": "Saque FGTS",
+							"type": "text"
+						},
+						{
+							"key": "valor_a_pagar",
+							"value": "9368.1",
+							"type": "text"
+						},
+						{
+							"key": "valor_solicitado",
+							"value": "500",
+							"type": "text"
+						},
+						{
+							"key": "taxa_juros",
+							"value": "368.099",
+							"type": "text"
+						},
+						{
+							"key": "qnt_parcelas",
+							"value": "18",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/simulacao/salvaoferta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"simulacao",
+						"salvaoferta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/v1/simulacao/calculacredito",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|CrXTcnFilFQmJBF5spVXeu9Q599VPRvqW6R5iSEC0c9ecdef",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "cpf",
+							"value": "12312312312",
+							"type": "text"
+						},
+						{
+							"key": "instituicao_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "codModalidade",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/simulacao/calcularoferta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"simulacao",
+						"calcularoferta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Aws",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "usuario1@email.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ec2-54-242-207-206.compute-1.amazonaws.com:8000/api/v1/simulacao/login",
+					"protocol": "http",
+					"host": [
+						"ec2-54-242-207-206",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"simulacao",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta Credito Aws",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|OW4cmLYMdQgbDmtWba15nf7ZtftnJmeKpZGtQsQ1e8ad3a72",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "cpf",
+							"value": "11111111111",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ec2-54-242-207-206.compute-1.amazonaws.com:8000/api/v1/simulacao/consultacredito",
+					"protocol": "http",
+					"host": [
+						"ec2-54-242-207-206",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"simulacao",
+						"consultacredito"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Simula Credito Aws",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|OW4cmLYMdQgbDmtWba15nf7ZtftnJmeKpZGtQsQ1e8ad3a72",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "cpf",
+							"value": "12312312312",
+							"type": "text"
+						},
+						{
+							"key": "instituicao_id",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "codModalidade",
+							"value": "33",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ec2-54-242-207-206.compute-1.amazonaws.com:8000/api/v1/simulacao/simulacredito",
+					"protocol": "http",
+					"host": [
+						"ec2-54-242-207-206",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"simulacao",
+						"simulacredito"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Melhores ofertas Aws",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|OW4cmLYMdQgbDmtWba15nf7ZtftnJmeKpZGtQsQ1e8ad3a72",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "cpf",
+							"value": "11111111111",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ec2-54-242-207-206.compute-1.amazonaws.com:8000/api/v1/simulacao/melhoresofertas",
+					"protocol": "http",
+					"host": [
+						"ec2-54-242-207-206",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"simulacao",
+						"melhoresofertas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Salvar Oferta Aws",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|MSMLOmfzbngj3gjwnmLEcfSf14BjHDzFWq8whi4Cab17cc7c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "cpf",
+							"value": "11111111111",
+							"type": "text"
+						},
+						{
+							"key": "id_instiuicao",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "instituicao_financeira",
+							"value": "Financeira Assert",
+							"type": "text"
+						},
+						{
+							"key": "modalidade_credito",
+							"value": "Saque FGTS",
+							"type": "text"
+						},
+						{
+							"key": "valor_a_pagar",
+							"value": "9368.1",
+							"type": "text"
+						},
+						{
+							"key": "valor_solicitado",
+							"value": "500",
+							"type": "text"
+						},
+						{
+							"key": "taxa_juros",
+							"value": "368.099",
+							"type": "text"
+						},
+						{
+							"key": "qnt_parcelas",
+							"value": "18",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ec2-54-242-207-206.compute-1.amazonaws.com:8000/api/v1/simulacao/salvaoferta",
+					"protocol": "http",
+					"host": [
+						"ec2-54-242-207-206",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"simulacao",
+						"salvaoferta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Calcular Oferta Aws",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|MSMLOmfzbngj3gjwnmLEcfSf14BjHDzFWq8whi4Cab17cc7c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "cpf",
+							"value": "12312312312",
+							"type": "text"
+						},
+						{
+							"key": "instituicao_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "codModalidade",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ec2-54-242-207-206.compute-1.amazonaws.com:8000/api/v1/simulacao/calcularoferta",
+					"protocol": "http",
+					"host": [
+						"ec2-54-242-207-206",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"simulacao",
+						"calcularoferta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout Aws",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|MSMLOmfzbngj3gjwnmLEcfSf14BjHDzFWq8whi4Cab17cc7c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ec2-54-242-207-206.compute-1.amazonaws.com:8000/api/v1/simulacao/logout",
+					"protocol": "http",
+					"host": [
+						"ec2-54-242-207-206",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"simulacao",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

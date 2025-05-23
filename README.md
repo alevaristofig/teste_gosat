@@ -14,5 +14,7 @@ Urls git
 https://github.com/alevaristofig/teste_gosat.git
 https://github.com/alevaristofig/teste_gosat_frontend.git
 
+Arquivo com as rotas postman: teste_gosat.postman_collection.json
+
 Obs: subi a aplicação back-end para uma instancia do aws, as rotas estão no postman, não fiz para o frontend,
 estava pedindo para gerar um certificado ssl para funcionar no https.
